@@ -1,4 +1,4 @@
-name: Deploy Frontend
+name: Deploy Frontend again
 on:
   push:
     branches:
