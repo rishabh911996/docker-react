@@ -1,14 +1,11 @@
 sudo: required
-language: generic
-
-services:
+sevices:
   - docker
-
 before_install:
-  - docker build -t stephengrider/docker-react -f Dockerfile.dev .
+  - docker build -t rishabh.911996/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true stephengrider/docker-react npm run test
+  - docker run rishabh.911996/docker-react npm run test
 
 deploy:
   provider: elsaticbeanstalk
@@ -20,4 +17,5 @@ deploy:
   on:
     branch: master
 access_key_id: $AWS_ACCESS_KEY
-secret_access_key: $AWS_SECRET_KEY
+secret_access_key: 
+  secure: "$AWS_SECRET_KEY"
